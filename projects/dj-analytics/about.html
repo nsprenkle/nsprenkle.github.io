@@ -9,43 +9,10 @@
         rel="stylesheet">
 
     <!-- Load stylesheets -->
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="mobile.css">
-    <link rel="stylesheet" href="small.css">
-    <link rel="stylesheet" href="large.css">
-
-    <!-- Override some stylings -->
-    <style>
-        main {
-            display: grid;
-            grid-template-columns: 1fr 4fr;
-        }
-
-        div {
-            grid-column: 2 / span 4;
-        }
-
-        a {
-            color: white;
-        }
-
-        .code {
-            font-family: 'Courier New', Courier, monospace;
-            background: #4d4d4d;
-            padding: 0em .2em;
-            border-radius: .2em;
-        }
-
-        /* Extra small devices (phones, 600px and down) */
-        @media only screen and (max-width: 600px) {
-            main {
-                display: block;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
-<body>
+<body id="about-page">
 
     <header>
         <a href="https://djsprenk.com"><img id="logo" src="assets/sprenk-logo-gradient-white.png" alt="DJ Sprenk"></a>
@@ -65,6 +32,37 @@
                 and combines data across multiple sources to make it easer to search, explore, and select sets to listen
                 to.
             </p>
+            <p>
+                For each set I have two styles of graph:
+            <ol>
+                <li>Timeilne</li>
+                <li>Playlist</li>
+            </ol>
+            </p>
+            <p>
+                In the <strong>Timeline</strong> graph, height (↑↓) represents BPM, from about 50 BPM to 100 BPM, higher
+                being faster.
+                The horizontal (→) represents time, with bars (|) representing song changes.
+            </p>
+            <p>
+                The color represents energy, as follows.
+            <ul>
+                <li><span class="song" data-energy="1">Lowest</span></li>
+                <li><span class="song" data-energy="2">Low</span></li>
+                <li><span class="song" data-energy="3">Medium</span></li>
+                <li><span class="song" data-energy="4">High</span></li>
+                <li><span class="song" data-energy="5">Highest</span></li>
+            </ul>
+            </p>
+            <img id="example-timeline" src="assets/sample-timeline.svg">
+            <p>
+                So, in the above "timeline" graph, the BPM is relatively flat in the first half with an increase and
+                then decrease in energy. In the second half there is a steady increase in BPM and energy before slowing
+                down and dropping energy in the last few songs.
+            </p>
+            <p>In the <strong>Playlist</strong> graph, time and BPM are not shown. Instead, songs are shown with their
+                energy</p>
+            <embed id="example-playlist" src="assets/sample-playlist.html" />
         </div>
 
         <h2>How it Works</h2>
@@ -121,16 +119,28 @@
                 This project utilizes the following technologies:
             </p>
             <ul>
-                <li><strong>Python</strong> for scripting and extracting data from VDJ.</li>
-                <li><strong>Pandas</strong> for data sanitization / joining.</li>
-                <li><strong>D3 / JavaScript</strong> for rendering sets & timelines.</li>
+                <li><strong><a href="https://www.python.org/">Python</a></strong> for scripting and extracting data from
+                    VDJ.</li>
+                <li><strong><a href="https://pandas.pydata.org/">Pandas</a></strong> for data sanitization / joining.
+                </li>
+                <li><strong><a href="https://d3js.org/">D3</a> / JavaScript</strong> for rendering sets & timelines.
+                </li>
                 <li><strong>HTML</strong> for page content and structure.</li>
-                <li><strong>CSS</strong> for page styling including <a
-                        hre="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">CSS Grid</a> and <a
+                <li><strong><a href="https://sass-lang.com/">SASS</a></strong> for page styling including <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">CSS Grid</a> and <a
                         href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout">Flexbox</a>.
                 </li>
-                <li><strong>Postman</strong> for pulling data from <a href="https://mixcloud.com">Mixcloud</a>.</li>
+                <li><strong><a href="https://www.postman.com/">Postman</a></strong> for pulling data from <a
+                        href="https://mixcloud.com">Mixcloud</a>.</li>
             </ul>
+        </div>
+
+
+        <h2>Attributions</h2>
+        <div>
+            <p>Gear icon by <a href="https://www.figma.com/@thewolfkit?ref=svgrepo.com" target="_blank">Thewolfkit</a>
+                in CC Attribution License via <a href="https://www.svgrepo.com/" target="_blank">SVG Repo</a>.
+            </p>
         </div>
 
         <h2>License</h2>
@@ -141,6 +151,7 @@
                 your own data under the terms in that license.
             </p>
         </div>
+
         <h2>Support</h2>
         <div>
             <p>
